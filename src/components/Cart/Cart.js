@@ -20,6 +20,7 @@ const Cart = (props) => {
   const cartItemAddHandler = (item) => {
     cartCtx.addItem(item);
   };
+
   const orderHandler = () => {
     setIsCheckout(true);
   };
@@ -38,6 +39,7 @@ const Cart = (props) => {
       ))}
     </ul>
   );
+
   const modalActions = (
     <div className={classes.actions}>
       <button className={classes["button--alt"]} onClick={props.onClose}>
@@ -58,7 +60,7 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      {isCheckout && <Checkout  onCancel ={props.onClose}/>}
+      {isCheckout && <Checkout onCancel={props.onClose} />}
       {!isCheckout && modalActions}
     </Modal>
   );
